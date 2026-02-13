@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.9",
+    "lastTouchedAt": "2026-02-12T01:55:44.655Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-11T09:47:49.711Z",
+    "lastRunVersion": "2026.2.9",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "/root/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      },
+      "model": {
+        "primary": "minimaxIO/MiniMax-M2.1"
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "allowInsecureAuth": false
+    },
+    "auth": {
+      "mode": "token",
+      "token": "a304f6c6c607c9c465e9d7c4296dbb8abb8f61562ca1adb4"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "feishu": {
+        "enabled": true
+      },
+      "qqbot": {
+        "enabled": true
+      },
+      "ddingtalk": {
+        "enabled": true
+      },
+      "wecom": {
+        "enabled": true
+      },
+      "adp-openclaw": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "qqbot": {
+        "source": "npm",
+        "spec": "@sliverp/qqbot@latest",
+        "installPath": "/root/.openclaw/extensions/qqbot",
+        "version": "1.4.4",
+        "installedAt": "2026-02-11T09:48:41.090Z"
+      },
+      "ddingtalk": {
+        "source": "npm",
+        "spec": "git+https://cnb.cool/lighthouse/lighthousebackend/openclaw-dingtalk.git",
+        "installPath": "/root/.openclaw/extensions/ddingtalk",
+        "version": "1.2.0",
+        "installedAt": "2026-02-11T09:49:01.618Z"
+      },
+      "wecom": {
+        "source": "npm",
+        "spec": "git+https://cnb.cool/lighthouse/lighthousebackend/openclaw-wecom.git",
+        "installPath": "/root/.openclaw/extensions/wecom",
+        "version": "2026.2.5",
+        "installedAt": "2026-02-11T09:49:25.555Z"
+      },
+      "adp-openclaw": {
+        "source": "npm",
+        "spec": "adp-openclaw",
+        "installPath": "/root/.openclaw/extensions/adp-openclaw",
+        "version": "0.0.24",
+        "installedAt": "2026-02-11T09:49:33.241Z"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "nvidia": {
+        "baseUrl": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "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",
+        "api": "openai",
+        "models": [
+          {
+            "id": "minimaxai/minimax-m2.1",
+            "name": "MiniMax-M2.1"
+          },
+          {
+            "id": "openai/gpt-oss-120b",
+            "name": "GPT-OSS-120B"
+          },
+          {
+            "id": "qwen/qwq-32b",
+            "name": "QwQ-32B"
+          },
+          {
+            "id": "meta/llama-3.1-405b-instruct",
+            "name": "Llama-3.1-405B-Instruct"
+          },
+          {
+            "id": "bytedance/seed-oss-36b-instruct",
+            "name": "Seed-OSS-36B-Instruct"
+          },
+          {
+            "id": "deepseek-ai/deepseek-v3.2",
+            "name": "DeepSeek-V3.2"
+          }
+        ]
+      },
+      "minimax": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "apiKey": "sk-api-3Gh41xJLvQUVQspkgsFq-jGW5TV6AE0bt9VtN5MfCVe2yT-K1AGr97F5_NUi9v-NisMTv4isUtZA-ZraeTpGFAT0fCefcOYyHzEauoSmdyRXx6g-oHiQBUU",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.1",
+            "name": "MiniMax M2.1"
+          },
+          {
+            "id": "MiniMax-M2.1-lightning",
+            "name": "MiniMax M2.1 Lightning"
+          },
+          {
+            "id": "MiniMax-M2",
+            "name": "MiniMax M2"
+          }
+        ]
+      },
+      "minimaxIO": {
+        "baseUrl": "https://api.minimax.io/anthropic",
+        "apiKey": "sk-cp-U82XuFWFQL0yzVR3sn7VCiSXbzy9iVmw-gcFqROOkGJOW6IhfV9FDKmOZoymvqEbtgYONpyuay9SPg2Lf095Dzlm5SHABPO0Cx91OFu4vaLaWrvXCuX_yxQ",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.1",
+            "name": "MiniMax-M2.1"
+          }
+        ]
+      }
+    },
+    "mode": "merge"
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a8a744de55bad00e",
+      "appSecret": "inKkY6tN10g2aEJMX018teqONN2cilaO",
+      "domain": "feishu",
+      "groupPolicy": "open"
+    }
+  }
+}
